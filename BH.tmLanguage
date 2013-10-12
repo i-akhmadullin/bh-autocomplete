@@ -3,10 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>comment</key>
-	<string>JavaScript Syntax: version 2.0</string>
+	<string>JavaScript/BH Syntax: version 2.0</string>
 	<key>fileTypes</key>
 	<array>
-		<string>js</string>
 		<string>bh.js</string>
 	</array>
 	<key>firstLineMatch</key>
@@ -18,7 +17,7 @@
 	<key>keyEquivalent</key>
 	<string>^~J</string>
 	<key>name</key>
-	<string>BH</string>
+	<string>BH template</string>
 	<key>patterns</key>
 	<array>
 		<dict>
