@@ -1,4 +1,4 @@
-Sublime Text BH-autocomplete
+Sublime Text bh-autocomplete
 ===
 
 Автодополнение для шаблонов BH
@@ -49,8 +49,8 @@ Cниппеты автодополнения
 Установка
 ----------------------------------
 
-1. Ctrl+Shift+P → Package Control: Add Repository → https://github.com/i-akhmadullin/BH-autocomplete
+1. Ctrl+Shift+P → Package Control: Add Repository → https://github.com/i-akhmadullin/bh-autocomplete
 
-2. Ctrl+Shift+P → Package Control: Install Package → BH-autocomplete
+2. Ctrl+Shift+P → Package Control: Install Package → bh-autocomplete
 
-3. В .bh.js файлах будет срабатывать автодополнение, а sublime должен определять синтаксис как BH (если этого не произошло: View → Syntax → Open all with current extension as... → BH )
+3. В .bh.js файлах будет срабатывать автодополнение, а sublime должен определять синтаксис как BH template (если этого не произошло: View → Syntax → Open all with current extension as... → BH template )
