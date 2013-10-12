@@ -8,22 +8,11 @@
         { "trigger": "match('expression', function(ctx){ ... });", "contents": "match('${1:expression}', function(ctx){\n\t$0\n});" },
         { "trigger": "bh.match('expression', function(ctx){ ... });", "contents": "bh.match('${1:expression}', function(ctx){\n\t$0\n});" },
 
-        { "trigger": "tag(value);", "contents": "tag('${1:value}');$0" },
-        { "trigger": "ctx.tag(value);", "contents": "ctx.tag('${1:value}');$0" },
-        { "trigger": "tag(value, force);", "contents": "tag('${1:value}', true);$0" },
-        { "trigger": "ctx.tag(value, force);", "contents": "ctx.tag('${1:value}', true);$0" },
+        { "trigger": "applyBase();", "contents": "applyBase();$0" },
+        { "trigger": "ctx.applyBase();", "contents": "ctx.applyBase();$0" },
 
-        { "trigger": "mod(key)", "contents": "mod(${1:key});$0" },
-        { "trigger": "ctx.mod(key)", "contents": "ctx.mod(${1:key});$0" },
-        { "trigger": "mod(key, value)", "contents": "mod('${1:key}', '${2:value}');$0" },
-        { "trigger": "ctx.mod(key, value)", "contents": "ctx.mod('${1:key}', '${2:value}');$0" },
-        { "trigger": "mod(key, value, force)", "contents": "mod('${1:key}', '${2:value}', true);$0" },
-        { "trigger": "ctx.mod(key, value, force)", "contents": "ctx.mod('${1:key}', '${2:value}', true);$0" },
-
-        { "trigger": "mods(values);", "contents": "mods({\n\t${1:modName}: ${2:modVal},\n\t${3:modName}: ${4:modVal}\n});$0" },
-        { "trigger": "ctx.mods(values);", "contents": "ctx.mods({\n\t${1:modName}: ${2:modVal},\n\t${3:modName}: ${4:modVal}\n});$0" },
-        { "trigger": "mods(values, force);", "contents": "mods({\n\t${1:modName}: ${2:modVal},\n\t${3:modName}: ${4:modVal}\n}, true);$0" },
-        { "trigger": "ctx.mods(values, force);", "contents": "ctx.mods({\n\t${1:modName}: ${2:modVal},\n\t${3:modName}: ${4:modVal}\n}, true);$0" },
+        { "trigger": "applyCtx();", "contents": "applyCtx();$0" },
+        { "trigger": "ctx.applyCtx();", "contents": "ctx.applyCtx();$0" },
 
         { "trigger": "attr(key)", "contents": "attr(${1:key});$0" },
         { "trigger": "ctx.attr(key)", "contents": "ctx.attr(${1:key});$0" },
@@ -32,27 +21,21 @@
         { "trigger": "attr(key, value, force)", "contents": "attr('${1:key}', '${2:value}', true);$0" },
         { "trigger": "ctx.attr(key, value, force)", "contents": "ctx.attr('${1:key}', '${2:value}', true);$0" },
 
-        { "trigger": "mix([{ block: blockName }]);", "contents": "mix([{ block: '${1:blockName}' }]);$0" },
-        { "trigger": "ctx.mix([{ block: blockName }]);", "contents": "ctx.mix([{ block: '${1:blockName}' }]);$0" },
-        { "trigger": "mix([{ block: blockName }], force);", "contents": "mix([{ block: '${1:blockName}' }], true);$0" },
-        { "trigger": "ctx.mix([{ block: blockName }], force);", "contents": "ctx.mix([{ block: '${1:blockName}' }], true);$0" },
-
         { "trigger": "bem(value);", "contents": "bem('${1:value}');$0" },
         { "trigger": "ctx.bem(value);", "contents": "ctx.bem('${1:value}');$0" },
         { "trigger": "bem(value, force);", "contents": "bem('${1:value}', true);$0" },
         { "trigger": "ctx.bem(value, force);", "contents": "ctx.bem('${1:value}', true);$0" },
-
-        { "trigger": "js(value);", "contents": "js('${1:value}');$0" },
-        { "trigger": "ctx.js(value);", "contents": "ctx.js('${1:value}');$0" },
-        { "trigger": "js(value, force);", "contents": "js('${1:value}', true);$0" },
-        { "trigger": "ctx.js(value, force);", "contents": "ctx.js('${1:value}', true);$0" },
-
 
         { "trigger": "content({ elem: elemName });", "contents": "content({ elem: '${1:elemName}' });$0" },
         { "trigger": "ctx.content({ elem: elemName });", "contents": "ctx.content({ elem: '${1:elemName}' });$0" },
         { "trigger": "content({ elem: elemName }, force);", "contents": "content({ elem: '${1:elemName}' }, true);$0" },
         { "trigger": "ctx.content({ elem: elemName }, force);", "contents": "ctx.content({ elem: '${1:elemName}' }, true);$0" },
         
+        { "trigger": "cls(class);", "contents": "content('${1:class}');$0" },
+        { "trigger": "ctx.cls(class);", "contents": "ctx.cls('${1:class}');$0" },
+        { "trigger": "cls(class, force);", "contents": "cls('${1:class}', true);$0" },
+        { "trigger": "ctx.cls(class, force);", "contents": "ctx.cls('${1:class}', true);$0" },
+
         { "trigger": "content([{ elem: elemName }]);", "contents": "content([\n\t{ elem: '${1:elemName}' }\n]);$0" },
         { "trigger": "ctx.content([{ elem: elemName }]);", "contents": "ctx.content([\n\t{ elem: '${1:elemName}' }\n]);$0" },
         { "trigger": "content([{ elem: elemName }], force);", "contents": "content([\n\t{ elem: '${1:elemName}' }\n], true);$0" },
@@ -68,12 +51,11 @@
         { "trigger": "content([{ block: blockName }], force);", "contents": "content([\n\t{ block: '${1:blockName}' }\n], true);$0" },
         { "trigger": "ctx.content([{ block: blockName }], force);", "contents": "ctx.content([\n\t{ block: '${1:blockName}' }\n], true);$0" },
 
+        { "trigger": "extend();", "contents": "extend();$0" },
+        { "trigger": "ctx.extend();", "contents": "ctx.extend();$0" },
 
-        { "trigger": "json();", "contents": "json();$0" },
-        { "trigger": "ctx.json();", "contents": "ctx.json();$0" },
-
-        { "trigger": "position();", "contents": "position();$0" },
-        { "trigger": "ctx.position();", "contents": "ctx.position();$0" },
+        { "trigger": "generateId();", "contents": "generateId();$0" },
+        { "trigger": "ctx.generateId();", "contents": "ctx.generateId();$0" },
 
         { "trigger": "isFirst();", "contents": "isFirst();$0" },
         { "trigger": "ctx.isFirst();", "contents": "ctx.isFirst();$0" },
@@ -81,20 +63,30 @@
         { "trigger": "isLast();", "contents": "isLast();$0" },
         { "trigger": "ctx.isLast();", "contents": "ctx.isLast();$0" },
 
-        { "trigger": "extend();", "contents": "extend();$0" },
-        { "trigger": "ctx.extend();", "contents": "ctx.extend();$0" },
+        { "trigger": "js(value);", "contents": "js('${1:value}');$0" },
+        { "trigger": "ctx.js(value);", "contents": "ctx.js('${1:value}');$0" },
+        { "trigger": "js(value, force);", "contents": "js('${1:value}', true);$0" },
+        { "trigger": "ctx.js(value, force);", "contents": "ctx.js('${1:value}', true);$0" },
 
-        { "trigger": "applyCtx();", "contents": "applyCtx();$0" },
-        { "trigger": "ctx.applyCtx();", "contents": "ctx.applyCtx();$0" },
+        { "trigger": "json();", "contents": "json();$0" },
+        { "trigger": "ctx.json();", "contents": "ctx.json();$0" },
 
-        { "trigger": "applyBase();", "contents": "applyBase();$0" },
-        { "trigger": "ctx.applyBase();", "contents": "ctx.applyBase();$0" },
+        { "trigger": "mix([{ block: blockName }]);", "contents": "mix([{ block: '${1:blockName}' }]);$0" },
+        { "trigger": "ctx.mix([{ block: blockName }]);", "contents": "ctx.mix([{ block: '${1:blockName}' }]);$0" },
+        { "trigger": "mix([{ block: blockName }], force);", "contents": "mix([{ block: '${1:blockName}' }], true);$0" },
+        { "trigger": "ctx.mix([{ block: blockName }], force);", "contents": "ctx.mix([{ block: '${1:blockName}' }], true);$0" },
 
-        { "trigger": "stop();", "contents": "stop();$0" },
-        { "trigger": "ctx.stop();", "contents": "ctx.stop();$0" },
+        { "trigger": "mod(key)", "contents": "mod(${1:key});$0" },
+        { "trigger": "ctx.mod(key)", "contents": "ctx.mod(${1:key});$0" },
+        { "trigger": "mod(key, value)", "contents": "mod('${1:key}', '${2:value}');$0" },
+        { "trigger": "ctx.mod(key, value)", "contents": "ctx.mod('${1:key}', '${2:value}');$0" },
+        { "trigger": "mod(key, value, force)", "contents": "mod('${1:key}', '${2:value}', true);$0" },
+        { "trigger": "ctx.mod(key, value, force)", "contents": "ctx.mod('${1:key}', '${2:value}', true);$0" },
 
-        { "trigger": "generateId();", "contents": "generateId();$0" },
-        { "trigger": "ctx.generateId();", "contents": "ctx.generateId();$0" },
+        { "trigger": "mods(values);", "contents": "mods({\n\t${1:modName}: ${2:modVal},\n\t${3:modName}: ${4:modVal}\n});$0" },
+        { "trigger": "ctx.mods(values);", "contents": "ctx.mods({\n\t${1:modName}: ${2:modVal},\n\t${3:modName}: ${4:modVal}\n});$0" },
+        { "trigger": "mods(values, force);", "contents": "mods({\n\t${1:modName}: ${2:modVal},\n\t${3:modName}: ${4:modVal}\n}, true);$0" },
+        { "trigger": "ctx.mods(values, force);", "contents": "ctx.mods({\n\t${1:modName}: ${2:modVal},\n\t${3:modName}: ${4:modVal}\n}, true);$0" },
 
         { "trigger": "param(key)", "contents": "param(${1:key});$0" },
         { "trigger": "ctx.param(key)", "contents": "ctx.param(${1:key});$0" },
@@ -103,21 +95,27 @@
         { "trigger": "param(key, value, force)", "contents": "param('${1:key}', '${2:value}', true);$0" },
         { "trigger": "ctx.param(key, value, force)", "contents": "ctx.param('${1:key}', '${2:value}', true);$0" },
 
+        { "trigger": "position();", "contents": "position();$0" },
+        { "trigger": "ctx.position();", "contents": "ctx.position();$0" },
+
+        { "trigger": "stop();", "contents": "stop();$0" },
+        { "trigger": "ctx.stop();", "contents": "ctx.stop();$0" },
+
+        { "trigger": "tag(value);", "contents": "tag('${1:value}');$0" },
+        { "trigger": "ctx.tag(value);", "contents": "ctx.tag('${1:value}');$0" },
+        { "trigger": "tag(value, force);", "contents": "tag('${1:value}', true);$0" },
+        { "trigger": "ctx.tag(value, force);", "contents": "ctx.tag('${1:value}', true);$0" },
+
         { "trigger": "tParam(key);", "contents": "tParam('${1:key}');$0" },
         { "trigger": "ctx.tParam(key);", "contents": "ctx.tParam('${1:key}');$0" },
         { "trigger": "tParam(key, value);", "contents": "tParam('${1:key}', '${2:value}');$0" },
         { "trigger": "ctx.tParam(key, value);", "contents": "ctx.tParam('${1:key}', '${2:value}');$0" },
 
-        { "trigger": "cls(class);", "contents": "content('${1:class}');$0" },
-        { "trigger": "ctx.cls(class);", "contents": "ctx.cls('${1:class}');$0" },
-        { "trigger": "cls(class, force);", "contents": "cls('${1:class}', true);$0" },
-        { "trigger": "ctx.cls(class, force);", "contents": "ctx.cls('${1:class}', true);$0" },
-
-        "content",
-        "null",
         "block",
         "elem",
         "modName",
-        "modVal"
+        "modVal",
+        "content",
+        "null"
     ]
 }
