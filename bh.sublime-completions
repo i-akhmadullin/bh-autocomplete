@@ -2,6 +2,8 @@
     "scope": "source.bh",
 
     "completions": [
+        { "trigger": "init", "contents": "module.exports = function(bh) {\n\tbh.match('${1:expression}', function(ctx){\n\t\t$0\n\t});\n};" },
+
         { "trigger": "exports", "contents": "exports = function(bh) {\n\t$0\n};" },
         { "trigger": "module.exports", "contents": "module.exports = function(bh) {\n\t$0\n};" },
 
@@ -122,7 +124,6 @@
         "elem",
         "modName",
         "modVal",
-        "content",
         "null"
     ]
 }
